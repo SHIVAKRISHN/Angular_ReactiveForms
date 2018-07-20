@@ -22,6 +22,9 @@ export class ProfileComponent implements OnInit {
     LastName : new FormControl('')
   })
 
-
+  onSubmit()
+  {
+    console.warn(this.profileForm.value);
+  }
 
 }

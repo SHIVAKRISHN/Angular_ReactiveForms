@@ -22,6 +22,10 @@ import { ProfileComponent } from './profile/profile.component';
       {
       path: 'nameEditor',
       component : NameEditorComponent
+      },
+      {
+        path: 'profile',
+        component : ProfileComponent
       }
     ])
   ],
