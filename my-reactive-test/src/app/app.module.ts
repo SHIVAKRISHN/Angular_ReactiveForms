@@ -1,14 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { RouterModule } from '@angular/router'
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileComponent } from './profile/profile.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NameEditorComponent,
+    ProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+      path: 'nameEditor',
+      component : NameEditorComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
