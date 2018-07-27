@@ -1,0 +1,18 @@
+<div>  
+  <form [formGroup]="orderForm" (ngSubmit)="OnSubmit(orderForm.value)">
+    <div>
+      <input type="text" formControlName="customerName"/>
+      <input type="text" formControlName="email"/>
+    </div>
+    <div formArrayName="items" *ngFor="let item of items.controls; let i = index;">
+ 
+        <input type="text" formControlName="name" placeholder="Item name"/>
+        <input type="text" formControlName="description" placeholder="Item description"/>
+        <input type="text" formControlName="price" placeholder="Item price"/>
+ 
+      Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }}
+    </div>
+    <button type="submit">Save</button>
+    <button type="button" (click)="addItem()">Add More</button>
+  </form>
+<div>
